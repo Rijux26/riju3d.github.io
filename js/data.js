@@ -32,7 +32,7 @@ const siteData = {
     {
       id: "sr2",
       title: "VFX Breakdown 2023",
-      embedUrl: "https://youtu.be/on3oaw570Vk?si=trRsn28af-8yLG3_",   // ← replace with your URL
+      embedUrl: "https://youtu.be/on3oaw570Vk",   // ← replace with your URL
       year: "2023",
       duration: "1:50",
       description: "Behind-the-scenes VFX breakdown of select projects.",
