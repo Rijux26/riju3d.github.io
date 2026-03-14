@@ -9,7 +9,7 @@
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
-/* ── Cursor ──────────────────────────────────────────────── */
+/* ── Cursor ─────────────────────────────────────────────── */
 const cursor    = $("#cursor");
 const cursorDot = $("#cursorDot");
 let mouseX = -100, mouseY = -100;
@@ -27,6 +27,54 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.transform = `translate(${curX}px, ${curY}px)`;
   requestAnimationFrame(animateCursor);
 })();
+
+document.addEventListener("mousedown", () => cursor.classList.add("pressed"));
+document.addEventListener("mouseup",   () => cursor.classList.remove("pressed"));
+
+document.querySelectorAll("a, button, .gallery-card, .showreel-card").forEach(el => {
+  el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+  el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+});
+
+/* ── Pixel Burst on Click ───────────────────────────────── */
+const COLORS = ["#9b5de5", "#c77dff", "#e0aaff", "#f0eef8", "#5a2ea6"];
+const PIXEL_COUNT = 14;
+
+document.addEventListener("click", (e) => {
+  for (let i = 0; i < PIXEL_COUNT; i++) {
+    spawnPixel(e.clientX, e.clientY);
+  }
+});
+
+function spawnPixel(x, y) {
+  const px = document.createElement("div");
+
+  const size    = Math.random() * 5 + 2;          // 2–7px
+  const angle   = Math.random() * 360;
+  const dist    = Math.random() * 55 + 20;        // 20–75px travel
+  const dur     = Math.random() * 380 + 280;      // 280–660ms
+  const color   = COLORS[Math.floor(Math.random() * COLORS.length)];
+  const isRound = Math.random() > 0.5;
+
+  px.style.cssText = `
+    position: fixed;
+    left: ${x}px;
+    top: ${y}px;
+    width: ${size}px;
+    height: ${size}px;
+    background: ${color};
+    border-radius: ${isRound ? "50%" : "1px"};
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    animation: pixelBurst ${dur}ms cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+    --tx: ${Math.cos((angle * Math.PI) / 180) * dist}px;
+    --ty: ${Math.sin((angle * Math.PI) / 180) * dist}px;
+  `;
+
+  document.body.appendChild(px);
+  px.addEventListener("animationend", () => px.remove());
+}
 
 document.addEventListener("mousedown", () => cursor.classList.add("pressed"));
 document.addEventListener("mouseup",   () => cursor.classList.remove("pressed"));
