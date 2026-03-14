@@ -663,3 +663,15 @@ ul { list-style: none; }
   .hero-cta { flex-direction: column; }
   .hero-cta .btn { width: fit-content; }
 }
+/* ── Pixel Burst Animation ─────────────────────────────── */
+@keyframes pixelBurst {
+  0%   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+  60%  { opacity: 0.8; }
+  100% {
+    transform: translate(
+      calc(-50% + var(--tx)),
+      calc(-50% + var(--ty))
+    ) scale(0);
+    opacity: 0;
+  }
+}   
