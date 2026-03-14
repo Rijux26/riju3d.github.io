@@ -1,220 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>Riju3D | Animation Portfolio</title>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0b0f14;
-color:white;
-}
-
-/* Header */
-
-header{
-padding:30px;
-font-size:28px;
-font-weight:bold;
-text-align:center;
-background:#111;
-color:#4fd1ff;
-}
-
-/* Layout */
-
-.container{
-display:flex;
-}
-
-/* Sidebar */
-
-.sidebar{
-width:200px;
-background:#0f1720;
-padding:20px;
-}
-
-.sidebar a{
-display:block;
-color:#4fd1ff;
-text-decoration:none;
-margin:10px 0;
-}
-
-.sidebar a:hover{
-color:white;
-}
-
-/* Main */
-
-.main{
-flex:1;
-padding:30px;
-}
-
-/* Section */
-
-.section{
-margin-bottom:50px;
-}
-
-.section h2{
-border-bottom:2px solid #4fd1ff;
-padding-bottom:10px;
-margin-bottom:20px;
-color:#4fd1ff;
-}
-
-/* Grid */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-/* Card */
-
-.card{
-background:#111827;
-padding:10px;
-border-radius:8px;
-}
-
-.card img{
-width:100%;
-border-radius:6px;
-}
-
-iframe{
-width:100%;
-height:200px;
-border:none;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riju3d — Animation Portfolio</title>
+  <meta name="description" content="Riju3d — 3D Animator & Motion Artist. Showreels, stills, and creative work." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
 </head>
-
-
 <body>
 
-<header>
+  <!-- ── CURSOR ── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-Riju3D | Character Animator
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">RIJU<span>3D</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#showreel" class="nav-link">Showreel</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
-</header>
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-tag mono">— 3D Animator & Motion Artist</p>
+      <h1 class="hero-title">
+        <span class="line">Bringing</span>
+        <span class="line accent">Worlds</span>
+        <span class="line">To Life</span>
+      </h1>
+      <p class="hero-sub mono">Character · FX · Cinematic · Loops</p>
+      <div class="hero-cta">
+        <a href="#showreel" class="btn btn-primary">Watch Showreel</a>
+        <a href="#work" class="btn btn-ghost">View Work</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint mono">scroll ↓</div>
+  </section>
 
-<div class="container">
+  <!-- ── SHOWREEL ── -->
+  <section class="section showreel-section" id="showreel">
+    <div class="section-header">
+      <span class="section-num mono">01</span>
+      <h2 class="section-title">Showreel</h2>
+    </div>
+    <div class="showreel-grid" id="showreelGrid">
+      <!-- Cards injected by JS from data.js -->
+    </div>
+  </section>
 
-<!-- Sidebar -->
+  <!-- ── WORK / GALLERY ── -->
+  <section class="section work-section" id="work">
+    <div class="section-header">
+      <span class="section-num mono">02</span>
+      <h2 class="section-title">Selected Work</h2>
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="character">Character</button>
+        <button class="filter-btn" data-filter="vfx">VFX</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
+        <button class="filter-btn" data-filter="still">Stills</button>
+      </div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Cards injected by JS from data.js -->
+    </div>
+  </section>
 
-<div class="sidebar">
+  <!-- ── ABOUT ── -->
+  <section class="section about-section" id="about">
+    <div class="section-header">
+      <span class="section-num mono">03</span>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-layout">
+      <div class="about-photo-wrap">
+        <div class="about-photo-placeholder" id="aboutPhoto">
+          <span class="mono">[ your photo ]</span>
+        </div>
+        <!-- Replace above div with: <img src="images/profile.jpg" alt="Riju3d" class="about-photo" /> -->
+      </div>
+      <div class="about-text">
+        <p class="about-intro" id="aboutIntro">
+          <!-- Edit this in data.js → siteData.about.bio -->
+        </p>
+        <div class="skills-grid" id="skillsGrid"></div>
+        <div class="about-tools">
+          <p class="mono label">Tools & Software</p>
+          <div class="tools-list" id="toolsList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h3>Social</h3>
+  <!-- ── CONTACT ── -->
+  <section class="section contact-section" id="contact">
+    <div class="section-header">
+      <span class="section-num mono">04</span>
+      <h2 class="section-title">Let's Talk</h2>
+    </div>
+    <div class="contact-layout">
+      <p class="contact-copy" id="contactCopy"></p>
+      <a class="contact-email" id="contactEmail" href="#"></a>
+      <div class="socials-row" id="socialsRow"></div>
+    </div>
+  </section>
 
-<a href="#">Instagram</a>
-<a href="#">YouTube</a>
-<a href="#">LinkedIn</a>
-<a href="#">ArtStation</a>
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <span class="mono">© <span id="footerYear"></span> Riju3d — All rights reserved</span>
+    <span class="mono footer-built">Built with care ✦</span>
+  </footer>
 
-</div>
+  <!-- ── LIGHTBOX ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 
-
-<!-- Main -->
-
-<div class="main">
-
-
-<!-- Demo Reel -->
-
-<div class="section">
-
-<h2>Demo Reel</h2>
-
-<iframe src="https://www.youtube.com/embed/7wr_fL5ec1U"></iframe>
-
-</div>
-
-
-<!-- Completed Work -->
-
-<div class="section">
-
-<h2>Completed Animation</h2>
-
-<div class="grid">
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/7wr_fL5ec1U"></iframe>
-<p>Squirrel Animation</p>
-</div>
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
-<p>Acting Shot</p>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Work in Progress -->
-
-<div class="section">
-
-<h2>Work In Progress</h2>
-
-<div class="grid">
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
-<p>Blocking Stage</p>
-</div>
-
-<div class="card">
-<iframe src="https://www.youtube.com/embed/VIDEOID"></iframe>
-<p>Animation Test</p>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- Render Images -->
-
-<div class="section">
-
-<h2>Render Images</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="images/render1.jpg">
-<p>Lighting Render</p>
-</div>
-
-<div class="card">
-<img src="images/render2.jpg">
-<p>Character Render</p>
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-</div>
-
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
