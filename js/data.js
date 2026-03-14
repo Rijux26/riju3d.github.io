@@ -22,11 +22,11 @@ const siteData = {
   showreels: [
     {
       id: "sr1",
-      title: "Animation Demo Reel 2024",
-      embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // ← replace with your URL
+      title: "Squirrel Animation",
+      embedUrl: "https://youtu.be/on3oaw570Vk", // ← replace with your URL
       year: "2024",
       duration: "2:34",
-      description: "Character animation, VFX, and motion design highlights from 2024.",
+      description: "Character animation, VFX, Color grading.",
       featured: true,   // featured = larger card
     },
     {
@@ -111,25 +111,33 @@ const siteData = {
      ABOUT SECTION
   ───────────────────────────────────────── */
   about: {
-    bio: `Hi, I'm Riju — a 3D animator and motion artist passionate about building 
-          characters that breathe and worlds that feel alive. With a background in 
-          classical animation principles and modern real-time workflows, I bridge 
-          the gap between technical precision and artistic storytelling.`,
+    bio: `I'm Riju, a character animator with a focus on bringing personality 
+      and weight to every frame. Maya is my primary tool for animation, 
+      where I work closely with the 12 principles to craft performances 
+      that feel grounded and alive — from walk cycles to full character 
+      acting shots.
 
-    skills: [
-      "Character Animation",
-      "Rigging & Skinning",
-      "VFX & Simulations",
-      "Motion Graphics",
-      "3D Modelling",
-      "Lighting & Rendering",
-    ],
+      On the rendering side I work with V-Ray and Arnold depending on 
+      the project's needs, and dip into Blender when the moment calls 
+      for it. Post-production flows through DaVinci Resolve for colour 
+      and finishing, with After Effects handling compositing and motion 
+      work. For pre-production, I sketch out storyboards and shot ideas 
+      in Photoshop before a single frame is animated.
 
+      I care about the craft at every stage — from the first thumbnail 
+      on a storyboard to the final grade.`,
+
+    skills:  [
+  "Character Animation",
+  "Storyboarding",
+  "Compositing",
+  "Lighting & Rendering",
+  "Post Production",
+],
     tools: [
-      "Blender", "Maya", "Cinema 4D", "Houdini",
-      "After Effects", "Nuke", "Arnold", "Cycles",
-      "Substance", "ZBrush",
-    ],
+  "Maya", "Blender", "V-Ray", "Arnold",
+  "After Effects", "DaVinci Resolve", "Photoshop",
+],
 
     // Replace with your photo: put profile.jpg in /images/ folder
     // then in index.html uncomment the <img> tag and remove the placeholder div
@@ -140,16 +148,12 @@ const siteData = {
      CONTACT & SOCIALS
   ───────────────────────────────────────── */
   contact: {
-    email: "hello@riju3d.com",   // ← your email
+    email: "abanindranathsahubusiness@gmail.com",   // ← your email
     copy: "Open for freelance projects, collaborations, and full-time opportunities.",
 
     socials: [
-      { name: "Instagram",  url: "https://instagram.com/riju3d",         icon: "IG" },
-      { name: "ArtStation", url: "https://artstation.com/riju3d",        icon: "AS" },
-      { name: "YouTube",    url: "https://youtube.com/@riju3d",          icon: "YT" },
-      { name: "LinkedIn",   url: "https://linkedin.com/in/riju3d",       icon: "LI" },
-      { name: "Twitter/X",  url: "https://twitter.com/riju3d",           icon: "𝕏"  },
-      { name: "Vimeo",      url: "https://vimeo.com/riju3d",             icon: "Vi" },
+      { name: "Instagram",  url: "https://www.instagram.com/_rijusahu_?igsh=cTc1bHB1ZHJreGJ0&utm_source=qr",         icon: "IG" },
+      { name: "LinkedIn",   url: "www.linkedin.com/in/abanindranathsahu",       icon: "LI" },
     ],
   },
 
