@@ -139,7 +139,7 @@ const siteData = {
      CONTACT & SOCIALS
   ───────────────────────────────────────── */
   contact: {
-    email: "abanindranathsahubusiness@gmail.com",   // ← your email
+    email: "bettercalltheanimator@gmail.com",   // ← your email
     copy: "Open for freelance projects, collaborations, and full-time opportunities.",
 
     socials: [
