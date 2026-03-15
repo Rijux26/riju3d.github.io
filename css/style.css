@@ -689,3 +689,38 @@ ul { list-style: none; }
     letter-spacing: 0.14em;
   }
 }
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+  .hero-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+  }
+  .contact-email {
+    font-size: 0.78rem;
+    word-break: break-all;
+    border-bottom: none;
+    border-left: 2px solid var(--purple);
+    padding-left: 0.8rem;
+    padding-bottom: 0;
+    line-height: 1.6;
+  }
+  .section {
+    overflow: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.6rem;
+  }
+}
